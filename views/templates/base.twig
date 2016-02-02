@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{% block title %}{% endblock %} - Pamit</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Quickly Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="{{ base_url() }}/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ base_url() }}/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script src="{{ base_url() }}/assets/js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="{{ base_url() }}/assets/js/move-top.js"></script>
+<script type="text/javascript" src="{{ base_url() }}/assets/js/easing.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
+    });
+</script>
+<!-- start-smoth-scrolling -->
+</head>
+
+<body>
+<!-- banner-body -->
+    <div class="banner-body">
+        <div class="container">
+        {% include 'templates/header.twig' %}
+<!-- header-bottom -->
+    <div class="header-bottom">
+        <div class="header-bottom-top">
+            <ul>
+                <li><a href="#" class="g"> </a></li>
+                <li><a href="#" class="p"> </a></li>
+                <li><a href="#" class="facebook"> </a></li>
+                <li><a href="#" class="twitter"> </a></li>
+            </ul>
+        </div>
+        <div class="clearfix"> </div>
+<!-- banner -->
+        <div class="banner">
+<!-- Slider-starts-Here -->
+                <script src="{{ base_url() }}/assets/js/responsiveslides.min.js"></script>
+                 <script>
+                    // You can also use "$(window).load(function() {"
+                    $(function () {
+                      // Slideshow 4
+                      $("#slider3").responsiveSlides({
+                        auto: true,
+                        pager: false,
+                        nav: true,
+                        speed: 500,
+                        namespace: "callbacks",
+                        before: function () {
+                          $('.events').append("<li>before event fired.</li>");
+                        },
+                        after: function () {
+                          $('.events').append("<li>after event fired.</li>");
+                        }
+                      });
+
+                    });
+                  </script>
+            <!--//End-slider-script -->
+                <div  id="top" class="callbacks_container wow fadeInUp" data-wow-delay="0.5s">
+                    <ul class="rslides" id="slider3">
+                        <li>
+                            <div class="banner-inf">
+                                <h3>soluta nobis est eligendi cumque</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis, ante interdum vehicula pretium, dui enim porta
+                                lectus, non euismod tortor ante eu libero</p>
+                                <a href="single.html">See More</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="banner-inf">
+                                <h3>euismod nobis est eligendi cumque</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis, ante interdum vehicula pretium, dui enim porta
+                                lectus, non euismod tortor ante eu libero</p>
+                                <a href="single.html">See More</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="banner-inf">
+                                <h3>tortor nobis est eligendi cumque</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis, ante interdum vehicula pretium, dui enim porta
+                                lectus, non euismod tortor ante eu libero</p>
+                                <a href="single.html">See More</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+<!-- //banner -->
+
+<!-- blog -->
+            <div class="blog">
+                <div class="blog-left">
+                    <div class="blog-left-grid">
+                        <div class="blog-left-grid-left">
+                            <h3><a href="single.html">voluptates repudiandae sint non recusandae</a></h3>
+                            <p>by <span>Charlie</span> | June 29,2015 | <span>Sint</span></p>
+                        </div>
+                        <div class="blog-left-grid-right">
+                            <a href="#" class="hvr-bounce-to-bottom non">20 Comments</a>
+                        </div>
+                        <div class="clearfix"> </div>
+                        <a href="single.html"><img src="{{ base_url() }}/assets/images/4.jpg" alt=" " class="img-responsive" /></a>
+                        <p class="para"> Itaque earum rerum hic tenetur a sapiente delectus,
+                            ut aut reiciendis voluptatibus maiores alias consequatur aut
+                            perferendis doloribus asperiores repellat.Et harum quidem rerum
+                            facilis est et expedita distinctio. Nam libero tempore, cum
+                            soluta nobis est eligendi optio cumque nihil impedit quo minus
+                            id quod maxime placeat facere possimus, omnis voluptas assumenda
+                            est, omnis dolor repellendus. Temporibus autem quibusdam et
+                            aut officiis debitis.</p>
+                        <div class="rd-mre">
+                            <a href="single.html" class="hvr-bounce-to-bottom quod">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-left-grid">
+                        <div class="blog-left-grid-left">
+                            <h3><a href="single.html">voluptates repudiandae sint non recusandae</a></h3>
+                            <p>by <span>Charlie</span> | June 29,2015 | <span>Sint</span></p>
+                        </div>
+                        <div class="blog-left-grid-right">
+                            <a href="#" class="hvr-bounce-to-bottom non">40 Comments</a>
+                        </div>
+                        <div class="clearfix"> </div>
+                        <a href="single.html"><img src="{{ base_url() }}/assets/images/5.jpg" alt=" " class="img-responsive" /></a>
+                        <p class="para"> Itaque earum rerum hic tenetur a sapiente delectus,
+                            ut aut reiciendis voluptatibus maiores alias consequatur aut
+                            perferendis doloribus asperiores repellat.Et harum quidem rerum
+                            facilis est et expedita distinctio. Nam libero tempore, cum
+                            soluta nobis est eligendi optio cumque nihil impedit quo minus
+                            id quod maxime placeat facere possimus, omnis voluptas assumenda
+                            est, omnis dolor repellendus. Temporibus autem quibusdam et
+                            aut officiis debitis.</p>
+                        <div class="rd-mre">
+                            <a href="single.html" class="hvr-bounce-to-bottom quod">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-right">
+
+                    <div class="newsletter">
+                        <h3>Subscribe To Our Newsletter</h3>
+                        <form>
+                            <input type="text" value="Email Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email Address';}" required="">
+                            <input type="submit" value="Send">
+                        </form>
+                    </div>
+
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+<!-- //blog -->
+    </div>
+<!-- //header-bottom -->
+        </div>
+    </div>
+<!-- //banner-body -->
+    {% include 'templates/footer.twig' %}
+<!-- for bootstrap working -->
+        <script src="{{ base_url() }}/assets/js/bootstrap.js"> </script>
+<!-- //for bootstrap working -->
+</body>
+</html>

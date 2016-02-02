@@ -8,6 +8,10 @@ return [
 
     'mode' => 'development',
 
+    'lang' => [
+        'default'   => 'id',
+    ],
+
     'db' => [
         'driver'    => 'mysql',
         'host'      => 'localhost',

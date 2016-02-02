@@ -41,3 +41,9 @@ $container['logger'] = function(Container $c) use ($settings) {
 $container['flash'] = function(Container $c) {
     return new Slim\Flash\Messages;
 };
+
+$container['validator'] = function (Container $c) use ($settings) {
+    $params = $c['request']->getParams();
+    $lang = $settings['lang'];
+    return new Valitron\Validator($params, [], $lang['default']);
+};
