@@ -1,5 +1,6 @@
 vendor/
 cache/
 logs/
+app/settings.php
 phinx.yml
 .DS_Store
