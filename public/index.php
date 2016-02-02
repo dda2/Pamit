@@ -4,7 +4,7 @@ $app = require dirname(__DIR__).'/app/bootstrap.php';
 
 $container  = $app->getContainer();
 
-$settings     = $container->get('settings');
+$settings   = $container->get('settings');
 
 if ($settings['mode'] === 'development') {
     $settings['displayErrorDetails'] = true;
