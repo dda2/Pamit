@@ -17,7 +17,7 @@ return [
         'host'      => 'localhost',
         'dbname'    => 'pamit',
         'user'      => 'root',
-        'password'  => '',
+        'password'  => 'root',
         'charset'   => 'utf8',
     ],
 
