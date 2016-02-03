@@ -14,6 +14,6 @@ class AdminHomeController extends Controller
     public function index(Request $request, Response $response, $args)
     {
 
-        return $this->view->render($response, 'adminhome.twig');
+        return $this->view->render($response, 'admin/home.twig');
     }
 }
