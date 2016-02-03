@@ -19,6 +19,7 @@ abstract class Controller
         $logger     = $this->container->get('logger');
         $db         = $this->container->get('db');
         $session    = $this->container->get('session');
+        $validator  = $this->container->get('validator');
     }
 
     public function __get($var)
