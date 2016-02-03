@@ -15,10 +15,8 @@ if (isset($settings['timezone'])) {
     date_default_timezone_set($settings['timezone'] ?: 'UTC');
 }
 
-if (!isset($_SESSION)) {
-    session_name($settings['appname']);
-    session_start();
-}
+session_cache_limiter(false);
+session_start();
 
 require_once APP_DIR.'dependencies.php';
 

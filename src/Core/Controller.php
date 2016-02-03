@@ -15,9 +15,10 @@ abstract class Controller
             $this->container = $container;
         }
 
-        $view   = $this->container->get('view');
-        $logger = $this->container->get('logger');
-        $db     = $this->container->get('db');
+        $view       = $this->container->get('view');
+        $logger     = $this->container->get('logger');
+        $db         = $this->container->get('db');
+        $session    = $this->container->get('session');
     }
 
     public function __get($var)

@@ -42,8 +42,12 @@ $container['flash'] = function(Container $c) {
     return new Slim\Flash\Messages;
 };
 
-$container['validator'] = function (Container $c) use ($settings) {
+$container['validator'] = function(Container $c) use ($settings) {
     $params = $c['request']->getParams();
     $lang = $settings['lang'];
     return new Valitron\Validator($params, [], $lang['default']);
+};
+
+$container['session']   = function(Container $c) {
+    return new Pamit\Core\Storage\SessionStorage;
 };
