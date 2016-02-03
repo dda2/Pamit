@@ -16,3 +16,12 @@ $app->get('/admin/flash', 'Pamit\Controllers\AdminHomeController:flash')
  */
 $app->get('/admin/signup', 'Pamit\Controllers\AuthController:getSignup')
     ->setName('signup');
+
+/*
+* article Route
+ */
+$app->get('/admin/article/add', 'Pamit\Controllers\admin\ArticleController:index')
+    ->setName('article');
+
+$app->post('/admin/article/add', 'Pamit\Controllers\admin\ArticleController:postArticle')
+    ->setName('article.post');
