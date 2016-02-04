@@ -5,11 +5,8 @@ namespace Pamit\Model;
 /**
 * User Model
 */
-class User
+class User extends Model
 {
     
-    function __construct(argument)
-    {
-        # code...
-    }
+    public function get
 }
