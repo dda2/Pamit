@@ -11,31 +11,21 @@ use Psr\Http\Message\ResponseInterface as Response;
 */
 class ArticleController extends Controller
 {
-    public function index(Request $request, Response $response, $args)
+    public function getAddArticle(Request $request, Response $response, $args)
     {
 
-        // $article = $request->getParsedBody();
-        // $query = "INSERT INTO article (title, content, image) 
-        //                     VALUES (:title, :content, :image)";
-
-        // $stmt = $this->db->prepare($query);
-        // $stmt->bindParam("title", $article->title);
-        // $stmt->bindParam("content", $article->content);
-        // $stmt->bindParam("image", $article->image);
-        // $stmt->execute()
-
-        
         return $this->view->render($response, 'admin/article/add.twig');
+
     }
 
     public function postArticle(Request $request, Response $response, $args)
     {
 
         $article = $request->getParsedBody();
-        $this->validator->rule('required',['title','content']);
+        $this->validator->rule('required',['title','content','date_post']);
         $this->validator->label([
             'title' => 'Title',
-            'content' => 'Content'
+            'content' => 'Content',
             'date_post' => 'Date Post'
             ]);
         if($this->validator->validate()) {
@@ -49,17 +39,14 @@ class ArticleController extends Controller
             // $stmt->bindParam(":image", $article->image);
             $stmt->execute();
         } else {
-            echo($this->validator->errors());
+            foreach($this->validator->errors() as $key => $value){
+                $this->flash->addMessage('error', $value[0]);
+            }
         }
 
+        $this->flash->addMessage('success', 'Data Berhasil disimpan');
+
         return $this->view->render($response, 'admin/article/add.twig');
+    
     }
-
-    public function uploadFile()
-    {
-
-    }
-
-        
-      
 }

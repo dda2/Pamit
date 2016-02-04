@@ -20,7 +20,7 @@ $app->get('/admin/signup', 'Pamit\Controllers\AuthController:getSignup')
 /*
 * article Route
  */
-$app->get('/admin/article/add', 'Pamit\Controllers\admin\ArticleController:index')
+$app->get('/admin/article/add', 'Pamit\Controllers\admin\ArticleController:getAddArticle')
     ->setName('article');
 
 $app->post('/admin/article/add', 'Pamit\Controllers\admin\ArticleController:postArticle')
