@@ -56,21 +56,24 @@
                         <div class="col-md-12">
                         {% if flash.getMessage('info').0 %}
                             <div class="alert alert-info">
-                                {{ flash.getMessage('info').0 }}
-                            </div>
-                        {% endif %}
-
-                        {% if flash.getMessage('error').0 %}
-                            <div class="alert alert-danger">
-                                {{ flash.getMessage('error').0 }}
+                                {{ flash.getMessage('info') }}
                             </div>
                         {% endif %}
 
                         {% if flash.getMessage('success').0 %}
                             <div class="alert alert-success">
-                                {{ flash.getMessage('success').0 }}
+                                {{ flash.getMessage('success') }}
                             </div>
                         {% endif %}
+
+                        {% if flash.getMessage('error') %}
+                            {% for error in flash.getMessage('error') %}
+                                <div class="alert alert-danger">
+                                    {{ error }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
 
                         {% block content %}{% endblock %}
                             {# <div class="content-top-1">

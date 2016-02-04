@@ -38,9 +38,14 @@ class AuthController extends Controller
             $result->execute();
 
         } else {
-                print_r($this->validator->errors());
+                foreach ($this->validator->errors() as $key => $error) {
+                    $this->flash->addMessage('error', $error[0]);
+                    // echo $error[0];
+                }
+                // exit();
+                return $this->view->render($response, 'admin/auth/signup.twig');
         }
-        $this->flash->addMessage('success', 'Tes Flashing Message');
+        // $this->flash->addMessage('success', 'Tes Flashing Message');
         return $this->view->render($response, 'admin/home.twig');
     }
 
