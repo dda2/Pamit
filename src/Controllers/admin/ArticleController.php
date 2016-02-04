@@ -32,17 +32,32 @@ class ArticleController extends Controller
     {
 
         $article = $request->getParsedBody();
+        $this->validator->rule('required',['title','content']);
+        $this->validator->label([
+            'title' => 'Title',
+            'content' => 'Content'
+            'date_post' => 'Date Post'
+            ]);
+        if($this->validator->validate()) {
+            $query = "INSERT INTO article (title, content, created_at) 
+                            VALUES (:title, :content, :created_at)";
 
-        $query = "INSERT INTO article (title, content) 
-                            VALUES (:title, :content)";
-
-        $stmt = $this->db->prepare($query);
-        $stmt->bindParam(':title', $article['title']);
-        $stmt->bindParam(':content', $article['content']);
-        // $stmt->bindParam(":image", $article->image);
-        $stmt->execute();
+            $stmt = $this->db->prepare($query);
+            $stmt->bindParam(':title', $article['title']);
+            $stmt->bindParam(':content', $article['content']);
+            $stmt->bindParam(':created_at',$article['date_post']);
+            // $stmt->bindParam(":image", $article->image);
+            $stmt->execute();
+        } else {
+            echo($this->validator->errors());
+        }
 
         return $this->view->render($response, 'admin/article/add.twig');
+    }
+
+    public function uploadFile()
+    {
+
     }
 
         
