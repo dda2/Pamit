@@ -1,0 +1,25 @@
+{% extends 'admin/templates/base.twig' %}
+{% block content %}
+    <h1>Add Article</h1>
+        <form action="{{ path_for('article.post') }}" method="POST">
+        <div class="col-sm-8">
+            <div class="form-group">
+                
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" name="title" id="title" placeholder="title">
+            
+            </div>
+            <div class="form-group">
+               
+                    <label for="content">Content</label>
+                    <input type="text" class="form-control" name="content" id="title" placeholder="content">
+            </div> 
+            <div class="form-group">
+               
+                    <label for="content">Date Post</label>
+                    <input type="date" name="date_post" class="form-control1 ng-invalid ng-invalid-required" ng-model="model.date">
+            </div>
+                        
+              <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+{% endblock %}
