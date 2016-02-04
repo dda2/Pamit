@@ -16,4 +16,11 @@ class AdminHomeController extends Controller
 
         return $this->view->render($response, 'admin/home.twig');
     }
+
+    public function flash(Request $request, Response $response, $args)
+    {
+        $this->flash->addMessage('success', 'Tes Flashing Message');
+
+        return $response->withRedirect($this->router->pathFor('admin'));
+    }
 }

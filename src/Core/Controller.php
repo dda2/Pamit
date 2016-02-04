@@ -20,6 +20,7 @@ abstract class Controller
         $db         = $this->container->get('db');
         $session    = $this->container->get('session');
         $validator  = $this->container->get('validator');
+        $flash      = $this->container->get('flash');
     }
 
     public function __get($var)

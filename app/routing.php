@@ -9,6 +9,8 @@ $app->get('/', 'Pamit\Controllers\HomeController:index')
 $app->get('/admin', 'Pamit\Controllers\AdminHomeController:index')
     ->setName('admin');
 
+$app->get('/admin/flash', 'Pamit\Controllers\AdminHomeController:flash')
+    ->setName('admin.flash');
 /*
 * Auth Route
  */

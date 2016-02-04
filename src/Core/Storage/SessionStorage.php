@@ -41,7 +41,7 @@ class SessionStorage implements StorageInterface
 
     public function destroy()
     {
-        unset($_SESSION[$this->storageKey]  );
+        unset($_SESSION[$this->storageKey]);
     }
 
     public function all()

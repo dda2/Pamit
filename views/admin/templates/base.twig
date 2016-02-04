@@ -4,13 +4,13 @@
         <title>Admin Panel</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+        <meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
         Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
         <link href="{{ base_url() }}/assets/admin/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
         <!-- Custom Theme files -->
         <link href="{{ base_url() }}/assets/admin/css/style.css" rel='stylesheet' type='text/css' />
-        <link href="{{ base_url() }}/assets/admin/css/font-awesome.css" rel="stylesheet"> 
+        <link href="{{ base_url() }}/assets/admin/css/font-awesome.css" rel="stylesheet">
         <script src="{{ base_url() }}/assets/admin/js/jquery.min.js"> </script>
         <!-- Mainly scripts -->
         <script src="{{ base_url() }}/assets/admin/js/jquery.metisMenu.js"></script>
@@ -40,10 +40,10 @@
         <div id="wrapper">
             {% include 'admin/templates/header.twig' %}
             <div class="clearfix"></div>
-            
+
             <div id="page-wrapper" class="gray-bg dashbard-1">
                 <div class="content-main">
-                <!--banner-->   
+                <!--banner-->
                     <div class="banner">
                         <h2>
                             <a href="index.html">Home</a>
@@ -54,6 +54,24 @@
 
                     <div class="content-top">
                         <div class="col-md-12">
+                        {% if flash.getMessage('info').0 %}
+                            <div class="alert alert-info">
+                                {{ flash.getMessage('info').0 }}
+                            </div>
+                        {% endif %}
+
+                        {% if flash.getMessage('error').0 %}
+                            <div class="alert alert-danger">
+                                {{ flash.getMessage('error').0 }}
+                            </div>
+                        {% endif %}
+
+                        {% if flash.getMessage('success').0 %}
+                            <div class="alert alert-success">
+                                {{ flash.getMessage('success').0 }}
+                            </div>
+                        {% endif %}
+
                         {% block content %}{% endblock %}
                             <div class="content-top-1">
                                 <div class="col-md-6 top-content">

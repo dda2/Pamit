@@ -2,6 +2,10 @@
 
 use Slim\Container;
 
+$container['flash'] = function(Container $c) {
+    return new Slim\Flash\Messages;
+};
+
 $container['view'] = function(Container $c) use ($settings) {
     $settings = $c->get('settings');
     $view = new \Slim\Views\Twig(
@@ -13,6 +17,8 @@ $container['view'] = function(Container $c) use ($settings) {
         $c->get('router'),
         $c->get('request')->getUri())
     );
+
+    $view->getEnvironment()->addGlobal('flash', $c['flash']);
 
     $view->addExtension(new Twig_Extension_Debug());
     return $view;
@@ -36,10 +42,6 @@ $container['logger'] = function(Container $c) use ($settings) {
             \Monolog\Logger::DEBUG)
     );
     return $logger;
-};
-
-$container['flash'] = function(Container $c) {
-    return new Slim\Flash\Messages;
 };
 
 $container['validator'] = function(Container $c) use ($settings) {
