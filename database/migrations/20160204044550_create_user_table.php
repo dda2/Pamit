@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class CreateUsersTable extends AbstractMigration
+class CreateUserTable extends AbstractMigration
 {
     /**
      * Change Method.
@@ -30,7 +30,6 @@ class CreateUsersTable extends AbstractMigration
         $users = $this->table('users');
         $users->addColumn('username', 'string', array('limit' => 20))
               ->addColumn('password', 'string', array('limit' => 40))
-              ->addColumn('password_salt', 'string', array('limit' => 40))
               ->addColumn('email', 'string', array('limit' => 100))
               ->addColumn('first_name', 'string', array('limit' => 30))
               ->addColumn('last_name', 'string', array('limit' => 30))

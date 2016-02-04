@@ -16,30 +16,31 @@ class AuthController extends Controller
 
     public function postSignup(Request $request, Response $response, $args)
     {
+
         $req = $request->getParsedBody();
         $this->validator->rule('required', ['username', 'email', 'password']);
         $this->validator->labels([
-            'username'  => $req['username'],
-            'email'     => $req['email'],
-            'password'  => $req['password']
+            'username'  => 'username',
+            'password'  => 'password',
+            'email'     => 'email'
             ]);
+        $new_password = hash('sha1',$req['password'] . $req['username']);
         if ($this->validator->validate()) {
-            $query = 'INSERT INTO users (username, password, email, first_name, last_name)
-                    value (:username, :password, :email, :first_name, :last_name)';
+            $query = 'INSERT INTO users (username, password, email) VALUES (:username, :password, :email)';
 
-            $result = $this->db->prepare($guery);
+            $result = $this->db->prepare($query);
 
-            $result->binParam(':username', $username['username']);
-            $result->binParam(':password', $password['']);
-            $result->binParam(':email', $email);
+            $result->bindParam(':username', $req['username']);
+            $result->bindParam(':password', $new_password);
+            $result->bindParam(':email', $req['email']);
             // $result->binParam(':first_name', $first_name);
             // $result->binParam(':last_name', $last_name);
-
             $result->execute();
+
         } else {
                 print_r($this->validator->errors());
         }
-        return $this->view->render($response, 'admin/home.twig');
+        return $this->view->render($response, 'admin/auth/signin.twig');
     }
 
     public function getSignin(Request $request, Response $response, $args)
