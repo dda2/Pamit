@@ -40,7 +40,8 @@ class AuthController extends Controller
         } else {
                 print_r($this->validator->errors());
         }
-        return $this->view->render($response, 'admin/auth/signin.twig');
+        $this->flash->addMessage('success', 'Tes Flashing Message');
+        return $this->view->render($response, 'admin/home.twig');
     }
 
     public function getSignin(Request $request, Response $response, $args)
