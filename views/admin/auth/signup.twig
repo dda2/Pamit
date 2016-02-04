@@ -1,0 +1,37 @@
+{% extends 'admin/templates/base.twig' %}
+{% block content %}
+    <div class="grid-form1">
+        <h3>Form SignUp</h3>
+        <div class="tab-content">
+            <div class="tab-pane active" id="horizontal-form">
+                <form action="{{ path_for('post.signup') }}" method="POST" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="" class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="username" class="form-control1" id="focusedinput" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-2 control-label">Email Address</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="email" class="form-control1" id="focusedinput" placeholder="Email Address">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-8">
+                            <input type="password" name="password" class="form-control1" id="focusedinput" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-8">
+                            <button type="submit" value="" class="btn btn-primary">Register</button>
+                            <a href="" class="btn btn-danger">Cancel</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

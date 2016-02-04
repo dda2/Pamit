@@ -16,3 +16,9 @@ $app->get('/admin/flash', 'Pamit\Controllers\AdminHomeController:flash')
  */
 $app->get('/admin/signup', 'Pamit\Controllers\AuthController:getSignup')
     ->setName('signup');
+
+$app->post('/admin/signup', 'Pamit\Controllers\AuthController:postSignup')
+    ->setName('post.signup');
+
+$app->get('/admin/signin', 'Pamit\Controllers\AuthController:getSignin')
+    ->setName('signin');
