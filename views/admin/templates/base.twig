@@ -56,13 +56,13 @@
                         <div class="col-md-12">
                         {% if flash.getMessage('info').0 %}
                             <div class="alert alert-info">
-                                {{ flash.getMessage('info') }}
+                                {{ flash.getMessage('info').0 }}
                             </div>
                         {% endif %}
 
                         {% if flash.getMessage('success').0 %}
                             <div class="alert alert-success">
-                                {{ flash.getMessage('success') }}
+                                {{ flash.getMessage('success').0 }}
                             </div>
                         {% endif %}
 

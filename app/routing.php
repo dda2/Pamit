@@ -23,6 +23,9 @@ $app->post('/admin/signup', 'Pamit\Controllers\AuthController:postSignup')
 $app->get('/admin/signin', 'Pamit\Controllers\AuthController:getSignin')
     ->setName('signin');
 
+$app->post('/admin/signin', 'Pamit\Controllers\AuthController:postSignin')
+    ->setName('signin');
+
 $app->get('/admin/article/add', 'Pamit\Controllers\admin\ArticleController:getAddArticle')
     ->setName('article');
 

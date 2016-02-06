@@ -24,7 +24,9 @@ class AuthController extends Controller
             'password'  => 'password',
             'email'     => 'email'
             ]);
-        $new_password = hash('sha1',$req['password'] . $req['username']);
+
+        $new_password = hash('sha1', $req['password']);
+
         if ($this->validator->validate()) {
             $query = 'INSERT INTO users (username, password, email) VALUES (:username, :password, :email)';
 
@@ -40,9 +42,7 @@ class AuthController extends Controller
         } else {
                 foreach ($this->validator->errors() as $key => $error) {
                     $this->flash->addMessage('error', $error[0]);
-                    // echo $error[0];
                 }
-                // exit();
                 return $this->view->render($response, 'admin/auth/signup.twig');
         }
         // $this->flash->addMessage('success', 'Tes Flashing Message');
@@ -58,6 +58,26 @@ class AuthController extends Controller
 
     public function postSignin(Request $request, Response $response, $args)
     {
+        $req = $request->getParsedBody();
 
+        $hashed_password = hash('sha1',$req['password']);
+
+        $query = "SELECT * FROM users WHERE email =:email AND password=:password";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->execute([
+            'email'     => $req['email'],
+            'password'  => $hashed_password,
+        ]);
+
+        $isExist    = $stmt->rowCount();
+        $userData   = $stmt->fetch(\PDO::FETCH_OBJ);
+
+        if ($isExist == 1) {
+            $this->session->set('auth', $userData);
+            print_r($this->session->get('auth'));
+        }else{
+
+        }
     }
 }
