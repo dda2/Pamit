@@ -2,6 +2,10 @@
 
 use Slim\Container;
 
+$container['session']   = function(Container $c) {
+    return new Pamit\Core\Storage\SessionStorage;
+};
+
 $container['flash'] = function(Container $c) {
     return new Slim\Flash\Messages;
 };
@@ -19,6 +23,7 @@ $container['view'] = function(Container $c) use ($settings) {
     );
 
     $view->getEnvironment()->addGlobal('flash', $c['flash']);
+    $view->getEnvironment()->addGlobal('session', $c['session']->all());
 
     $view->addExtension(new Twig_Extension_Debug());
     return $view;
@@ -48,8 +53,4 @@ $container['validator'] = function(Container $c) use ($settings) {
     $params = $c['request']->getParams();
     $lang = $settings['lang'];
     return new Valitron\Validator($params, [], $lang['default']);
-};
-
-$container['session']   = function(Container $c) {
-    return new Pamit\Core\Storage\SessionStorage;
 };

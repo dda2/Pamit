@@ -12,7 +12,7 @@
         <div class=" border-bottom">
             <div class="full-left">
                 <section class="full-top">
-                    <button id="toggle"><i class="fa fa-arrows-alt"></i></button>   
+                    <button id="toggle"><i class="fa fa-arrows-alt"></i></button>
                 </section>
                 <form class=" navbar-left-right">
                     <input type="text"  value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}">
@@ -26,7 +26,7 @@
                 <ul class=" nav_1">
                     <li class="dropdown at-drop">
                         <a href="#" class="dropdown-toggle dropdown-at " data-toggle="dropdown">
-                            <i class="fa fa-globe"></i> 
+                            <i class="fa fa-globe"></i>
                             <span class="number">5</span>
                         </a>
                         <ul class="dropdown-menu menu1 " role="menu">
@@ -97,7 +97,7 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown">
-                            <span class=" name-caret">Rackham
+                            <span class=" name-caret"> {{ session.auth.username }}
                                 <i class="caret"></i>
                             </span>
                             <img src="{{ base_url() }}/assets/admin/images/wo.jpg">
@@ -113,26 +113,26 @@
             </div><div class="clearfix"></div>
         </div><!-- /.navbar-collapse -->
 
-        
+
 
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
                         <a href="{{ path_for('admin') }}" class=" hvr-bounce-to-right">
-                            <i class="fa fa-dashboard nav_icon "></i> 
+                            <i class="fa fa-dashboard nav_icon "></i>
                             <span class="nav-label">Dashboards</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class=" hvr-bounce-to-right">
-                            <i class="fa fa-indent nav_icon"></i> 
+                            <i class="fa fa-indent nav_icon"></i>
                             <span class="nav-label">Menu Levels</span>
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="graphs.html" class=" hvr-bounce-to-right"> 
+                                <a href="graphs.html" class=" hvr-bounce-to-right">
                                     <i class="fa fa-area-chart nav_icon"></i>Graphs
                                 </a>
                             </li>
@@ -142,7 +142,7 @@
                                     <i class="fa fa-map-marker nav_icon"></i>Maps
                                 </a>
                             </li>
-            
+
                             <li>
                                 <a href="typography.html" class=" hvr-bounce-to-right">
                                     <i class="fa fa-file-text-o nav_icon"></i>Typography
@@ -152,25 +152,25 @@
                     </li>
                     <li>
                         <a href="inbox.html" class=" hvr-bounce-to-right">
-                            <i class="fa fa-inbox nav_icon"></i> 
-                            <span class="nav-label">Inbox</span> 
+                            <i class="fa fa-inbox nav_icon"></i>
+                            <span class="nav-label">Inbox</span>
                         </a>
                     </li>
                     <li>
                         <a href="gallery.html" class=" hvr-bounce-to-right">
-                            <i class="fa fa-picture-o nav_icon"></i> 
-                            <span class="nav-label">Gallery</span> 
+                            <i class="fa fa-picture-o nav_icon"></i>
+                            <span class="nav-label">Gallery</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class=" hvr-bounce-to-right">
-                            <i class="fa fa-desktop nav_icon"></i> 
+                            <i class="fa fa-desktop nav_icon"></i>
                             <span class="nav-label">Pages</span>
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="404.html" class=" hvr-bounce-to-right"> 
+                                <a href="404.html" class=" hvr-bounce-to-right">
                                     <i class="fa fa-info-circle nav_icon"></i>Error 404
                                 </a>
                             </li>
@@ -188,13 +188,13 @@
                     </li>
                     <li>
                         <a href="layout.html" class=" hvr-bounce-to-right">
-                            <i class="fa fa-th nav_icon"></i> 
-                            <span class="nav-label">Grid Layouts</span> 
+                            <i class="fa fa-th nav_icon"></i>
+                            <span class="nav-label">Grid Layouts</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class=" hvr-bounce-to-right">
-                            <i class="fa fa-list nav_icon"></i> 
+                            <i class="fa fa-list nav_icon"></i>
                             <span class="nav-label">Forms</span>
                             <span class="fa arrow"></span>
                         </a>
@@ -213,7 +213,7 @@
                     </li>
                     <li>
                         <a href="#" class=" hvr-bounce-to-right">
-                            <i class="fa fa-cog nav_icon"></i> 
+                            <i class="fa fa-cog nav_icon"></i>
                             <span class="nav-label">Settings</span>
                             <span class="fa arrow"></span>
                         </a>
