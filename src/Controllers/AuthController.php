@@ -43,8 +43,8 @@ class AuthController extends Controller
             foreach ($this->validator->errors() as $key => $error) {
                 $this->flash->addMessage('error', $error[0]);
             }
-
-            return $this->view->render($response, 'admin/auth/signup.twig');
+                $this->flash->addMessage('error', 'Data Not Found');
+                return $response->withRedirect($this->router->pathFor('admin/signin'));
         }
         // $this->flash->addMessage('success', 'Tes Flashing Message');
         return $this->view->render($response, 'admin/home.twig');
@@ -76,9 +76,11 @@ class AuthController extends Controller
 
         if ($isExist == 1) {
             $this->session->set('auth', $userData);
-            print_r($this->session->get('auth'));
+            $this->flash->addMessage('success', 'Login Successful');
+            return $response->withRedirect($this->router->pathFor('admin'));
         }else{
-
+            $this->flash->addMessage('error', 'Data Not Found');
+            return $response->withRedirect($this->router->pathFor('admin/signup'));
         }
     }
 }

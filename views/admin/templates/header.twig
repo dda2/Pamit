@@ -218,16 +218,24 @@
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{{ path_for('signin') }}" class=" hvr-bounce-to-right">
-                                    <i class="fa fa-sign-in nav_icon"></i>Signin
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ path_for('signup') }}" class=" hvr-bounce-to-right">
-                                    <i class="fa fa-sign-in nav_icon"></i>Singup
-                                </a>
-                            </li>
+                            {% if session.auth.username != null %}
+                                <li>
+                                    <a href="{{ path_for('logout') }}" class=" hvr-bounce-to-right">
+                                        <i class="fa fa-sign-in nav_icon"></i>Logout
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li>
+                                    <a href="{{ path_for('signin') }}" class=" hvr-bounce-to-right">
+                                        <i class="fa fa-sign-in nav_icon"></i>Signin
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ path_for('signup') }}" class=" hvr-bounce-to-right">
+                                        <i class="fa fa-sign-in nav_icon"></i>Singup
+                                    </a>
+                                </li>
+                            {% endif %}
                         </ul>
                     </li>
                 </ul>
